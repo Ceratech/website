@@ -1,2 +1,103 @@
 {{ define "main" }}
+<header>
+  <a href="../../index.html"><img src="../../images/ceratech_long.png" alt="ceratech" class="logo"></a>
+  <nav class="nav-collapse">
+    <ul>
+      <li class="menu-item"><a href="../../index.html">Back to Homepage</a></li>
+    </ul>
+  </nav>
+  <div id="backHomepage"><a href="../../index.html">Back to Homepage</a></div>
+</header>
+<section>
+  <div id="article">
+    <h1>{{ .Title }}</h1>
+    <img src="../../images/blog-placeholder.jpg" alt="">
+    <ul>
+      <li>by <a href="{{ $.Param "author.linkedin" }}">{{ $.Param "author.name" }}</a></li>
+      <li>{{ .Date.Format "31-12-2017" }}</li>
+      <li><i class="fa fa-clock-o" aria-hidden="true"></i> 6 min</li>
+    </ul>
+    {{ .Content }}
+    {{ with .Params.tags }}
+    <ul>
+      <li><i class="fa fa-tags" aria-hidden="true"></i></li>
+      {{ range . }}
+        <li> <a href="{{ "tags" | absURL }}{{ . | urlize }}">{{ . }}</a> </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </div>
+  <!-- Aside -->
+  <div id="aside">
+    <form action="/search" class="form-search" method="GET" style="display: flex;">
+      <div class="form-search-wrapper">
+        <input name="q" style="flex-grow:2" type="text" placeholder="search"/>
+        <input class="form-search-submit" type="submit" value=""/>
+      </div>
+    </form>
+    <h3>Maandoverzicht</h3>
+    <dl class="accordion">
+      <dt><a href="">2018</a></dt>
+      <dd><a href="">januari()</a>
+        <a href="">februari()</a>
+        <a href="">maart()</a>
+        <a href="">april()</a>
+        <a href="">mei()</a>
+        <a href="">juni()</a>
+        <a href="">juli()</a>
+        <a href="">augustus()</a>
+        <a href="">september()</a>
+        <a href="">oktober()</a>
+        <a href="">november()</a>
+        <a href="">december()</a></dd>
+      <dt><a href="">2019</a></dt>
+      <dd><a href="">januari()</a>
+        <a href="">februari()</a>
+        <a href="">maart()</a>
+        <a href="">april()</a>
+        <a href="">mei()</a>
+        <a href="">juni()</a>
+        <a href="">juli()</a>
+        <a href="">augustus()</a>
+        <a href="">september()</a>
+        <a href="">oktober()</a>
+        <a href="">november()</a>
+        <a href="">december()</a></dd>
+      <dt><a href="">2020</a></dt>
+      <dd><a href="">januari()</a>
+        <a href="">februari()</a>
+        <a href="">maart()</a>
+        <a href="">april()</a>
+        <a href="">mei()</a>
+        <a href="">juni()</a>
+        <a href="">juli()</a>
+        <a href="">augustus()</a>
+        <a href="">september()</a>
+        <a href="">oktober()</a>
+        <a href="">november()</a>
+        <a href="">december()</a></dd>
+    </dl>
+    <h3>About</h3>
+    <p style="text-align: center;">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+      laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
+      sunt explicabo. </p>
+    <h3>Tags</h3>
+    <ul>
+      <li><i class="fa fa-tags" aria-hidden="true"></i></li>
+      <li><a href="">SQL</a></li>
+      <li><a href="">Java</a></li>
+      <li><a href="">Hello kitty</a></li>
+      <li><a href="">Hond</a></li>
+      <li><a href="">Lorem</a></li>
+    </ul>
+  </div>
+</section>
+<footer>
+  <img src="../../images/ceratech-white.png" alt="">
+  <p>
+    <i class="fa fa-copyright" aria-hidden="true"></i>
+    Ceratech 2018 </p>
+  <p>Website made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="http://www.yellibeanz.nl/"><span>yellibeanz</span></a>
+  </p>
+</footer>
 {{ end }}
