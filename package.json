@@ -1,0 +1,25 @@
+{
+  "name": "ceratech.io",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config webpack.common.js && hugo",
+    "serve": "webpack --config webpack.common.js && hugo serve --disableFastRender",
+    "watch": "parallelshell 'hugo serve --disableFastRender' 'webpack --watch --config webpack.common.js'",
+    "prod": "webpack -p --config webpack.prod.js && hugo"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^0.28.11",
+    "google-fonts-webpack-plugin": "^0.4.4",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.12.1",
+    "webpack-cli": "^3.0.8"
+  }
+}
