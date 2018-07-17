@@ -1,5 +1,7 @@
 @import "variables";
 
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
 * {
   box-sizing: border-box;
   text-decoration: none;
@@ -51,7 +53,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Keywords */
 .flex-container {
   display: flex;
   flex-wrap: wrap;

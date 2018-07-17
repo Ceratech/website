@@ -1,16 +1,8 @@
 @import "variables";
 
-@import "~normalize.css/normalize";
-@import "~bootstrap/scss/bootstrap.scss";
-@import "~animate.css/animate";
+@import "vendor";
 
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import '~@fortawesome/fontawesome-free/scss/fa-brands';
-@import '~@fortawesome/fontawesome-free/scss/fa-solid';
-
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
-
-@import "basics";
+@import "base";
 @import "navigation";
 @import "header";
 @import "about";
