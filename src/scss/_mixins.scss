@@ -1,0 +1,6 @@
+@import "variables";
+
+@mixin blue-background {
+  color: #FFFFFF;
+  background-color: $color-blue;
+}

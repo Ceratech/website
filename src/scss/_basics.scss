@@ -1,0 +1,56 @@
+@import "variables";
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: $font-family;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+}
+
+p {
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+a {
+  color: black;
+
+  &:active, &:hover {
+    outline: 0;
+    text-decoration: none;
+  }
+}
+
+ul, menu, dir {
+  display: block;
+  list-style-type: disc;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+/* Keywords */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}

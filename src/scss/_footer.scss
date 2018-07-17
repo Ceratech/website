@@ -1,0 +1,64 @@
+@import "variables";
+@import "mixins";
+
+.bedrijfgegevens {
+  width: auto;
+  display: block;
+  margin: 10px auto 20px auto;
+  text-align: center;
+
+  h3 {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    font-weight: bold;
+  }
+
+  ul li {
+    list-style-type: none;
+  }
+}
+
+footer {
+  @include blue-background;
+  height: auto;
+  position: relative;
+  clear: both;
+
+  img {
+    top: 0;
+    left: 0;
+    width: 25px;
+    margin: 20px;
+    position: absolute;
+  }
+
+  p {
+    text-align: center;
+    bottom: 0;
+    padding: 10px;
+  }
+
+  a {
+    color: white;
+  }
+
+  p:first-child {
+    text-decoration: none;
+    font-size: 2rem;
+    color: #fff;
+  }
+
+  p span {
+    text-decoration: underline;
+
+    &:hover {
+      color: $color-orange;
+      text-decoration: none;
+    }
+  }
+
+  .fa.fa-heart {
+    color: $color-orange;
+  }
+}
+

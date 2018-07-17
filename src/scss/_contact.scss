@@ -1,0 +1,76 @@
+@import "variables";
+@import "mixins";
+
+#contact {
+  @include blue-background;
+  height: auto;
+  clear: both;
+  padding-bottom: 60px;
+
+  h1 {
+    padding: 30px 0;
+    margin: 20px auto 0 auto;
+    font-weight: bolder;
+  }
+
+  h3 {
+    padding: 30px 0 15px 0;
+    margin: 20px auto 0 auto;
+    font-weight: bolder;
+  }
+
+  h4 {
+    padding: 0 0 15px 0;
+    margin: 0 auto;
+  }
+
+  img {
+    width: 200px;
+    display: block;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+
+  .flex-container div {
+    margin: 30px 0 5px 0;
+    width: 320px;
+
+    &:nth-child(2) {
+      margin-top: 10px;
+    }
+
+    &:nth-child(4) {
+      margin-top: 5px;
+    }
+  }
+
+  ul {
+    margin-top: 10px;
+
+    li {
+      display: inline-block;
+    }
+  }
+
+  a:hover {
+    background-color: $color-orange;
+    color: #fff;
+  }
+
+  #line {
+    display: none;
+  }
+
+  .social-media-circle {
+    height: 41px;
+    width: 41px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    font-size: 2.7rem;
+    list-style: none;
+    color: white;
+  }
+}
