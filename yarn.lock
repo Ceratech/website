@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@fortawesome/fontawesome-free@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.1.0.tgz#f35f5ba91366b7a58b0b6a4f22ff0907fe002219"
+
 "@webassemblyjs/ast@1.5.12":
   version "1.5.12"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.5.12.tgz#a9acbcb3f25333c4edfa1fdf3186b1ccf64e6664"
@@ -1799,6 +1803,13 @@ figures@^2.0.0:
   resolved "https://registry.yarnpkg.com/figures/-/figures-2.0.0.tgz#3ab1a2d2a62c8bfb431a0c94cb797a2fce27c962"
   dependencies:
     escape-string-regexp "^1.0.5"
+
+file-loader@^1.1.11:
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-1.1.11.tgz#6fe886449b0f2a936e43cabaac0cdbfb369506f8"
+  dependencies:
+    loader-utils "^1.0.2"
+    schema-utils "^0.4.5"
 
 fill-range@^4.0.0:
   version "4.0.0"

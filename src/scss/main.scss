@@ -1,9 +1,19 @@
+@import "variables";
+
 @import "~normalize.css/normalize";
 @import "~bootstrap/scss/bootstrap.scss";
 @import "~animate.css/animate";
-@import "~font-awesome/scss/font-awesome";
+
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/fa-brands';
+@import '~@fortawesome/fontawesome-free/scss/fa-solid';
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+@import "navigation";
+@import "header";
+@import "about";
+@import "services";
 
 * {
   -webkit-box-sizing: border-box;
@@ -12,71 +22,38 @@
   text-decoration: none;
 }
 
-html {
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
-
-body, div,
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, dl, dt, dd, ol, ul, li, hr,
-fieldset, form, label, legend, th, td,
-article, aside, figure, footer, header, hgroup, menu, nav, section,
-summary, hgroup {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 1.2rem;
-  font-family: 'Montserrat', sans-serif;
+body {
+  font-family: $font-family;
 }
 
 h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
+p {
+  font-style: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
 a {
   color: black;
-}
 
-a:active,
-a:hover {
-  outline: 0;
-  text-decoration: none;
-}
-
-p {
-  font-size: 1.5rem;
+  &:active, &:hover {
+    outline: 0;
+    text-decoration: none;
+  }
 }
 
 ul, menu, dir {
   display: block;
   list-style-type: disc;
-  -webkit-margin-before: 0em;
-  -webkit-margin-after: 0em;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
-  -webkit-padding-start: 0px;
-}
-
-@-webkit-viewport {
-  width: device-width;
-}
-
-@-moz-viewport {
-  width: device-width;
-}
-
-@-ms-viewport {
-  width: device-width;
-}
-
-@-o-viewport {
-  width: device-width;
-}
-
-@viewport {
-  width: device-width;
 }
 
 body {
@@ -92,240 +69,6 @@ body {
 }
 
 /* ==========================================================================
-			2. TYPOGRAFIE - De Typografie van de pagina.
-========================================================================== */
-
-/* ------------------------------------------
-font-family: 'Montserrat', sans-serif;
-Koptekst: Bold.
-Tussenkoptekst: Medium.
-Alinea: Regular.
-  --------------------------------------------- */
-
-/* ==========================================================================
-			3. KLEUREN - Kleurenschema.
-========================================================================== */
-
-/* ------------------------------------------
- Blauw: #354575
- Dark-blue: #000059
- Orange: #F79C71
- Grijs: #f5f6f7
-   --------------------------------------------- */
-
-/* ==========================================================================
-			4. NAVIGATIE - Alle elementen die bij de navigatie horen.
-========================================================================== */
-
-.nav-collapse ul {
-  display: none;
-}
-
-.js .nav-collapse {
-  clip: rect(0 0 0 0);
-  max-height: 0;
-  position: absolute;
-  display: block;
-  overflow: hidden;
-  zoom: 1;
-}
-
-.disable-pointer-events {
-  pointer-events: none !important;
-}
-
-header {
-  background: #fff;
-  position: fixed;
-  width: 100%;
-  height: auto;
-  left: 0;
-  top: 0;
-  -webkit-box-shadow: 0px 2px 24px -2px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px 2px 24px -2px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 2px 24px -2px rgba(0, 0, 0, 0.5);
-  z-index: 2;
-}
-
-.logo {
-  width: 150px;
-  margin: 15px auto;
-  display: block;
-}
-
-.nav-collapse a:active,
-.nav-collapse .active a {
-  border-bottom: 4px solid #F79C71;
-  font-size: 1.5rem;
-}
-
-.nav-collapse a {
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-
-.nav-collapse a:hover {
-  border-bottom: 3px solid #F79C71;
-}
-
-#backHomepage {
-  background-color: #354575;
-  font-size: 1.5rem;
-  text-align: center;
-  color: #fff;
-  padding: 10px 0;
-}
-
-#backHomepage a {
-  color: #fff;
-}
-
-/* ==========================================================================
-      5. HEADERIMAGE - .
-========================================================================== */
-
-.heroimage {
-  background: url("/images/heroimage-mob.png") no-repeat center;
-  padding: 0;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  background-size: contain;
-  height: 300px;
-  margin: -15px 0 0;
-}
-
-section {
-  text-align: center;
-  padding: 0;
-  margin: 0;
-  height: auto;
-  width: auto;
-}
-
-/* ==========================================================================
-	   6. ABOUT - Alle elementen die bij de ABOUT section horen.
-========================================================================== */
-
-#about {
-  height: auto;
-  margin-bottom: 30px;
-  margin-top: -75px;
-}
-
-#about h1 {
-  background-color: #354575;
-  color: #fff;
-  font-size: 3rem;
-  padding: 25px 0;
-  font-weight: bolder;
-}
-
-#about h2 {
-  margin: 20px;
-  font-size: 2.3rem;
-  font-weight: bold;
-}
-
-#about h3 {
-  margin: 10px;
-  font-size: 1.5rem;
-  text-align: center;
-}
-
-#about p {
-  margin: 25px auto;
-  font-size: 1.5rem;
-  width: 80%;
-}
-
-/* Keywords */
-
-#about .flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-#about .flex-container div {
-  width: 60%;
-  display: block;
-  margin: 20px auto;
-}
-
-#about .flex-container div h3 {
-  width: 100%;
-  display: block;
-  margin: 10px auto;
-}
-
-#about .flex-container img {
-  display: block;
-}
-
-/* ==========================================================================
-	   7. SERVICES - Alle elementen die bij de SERVICES section horen.
-========================================================================== */
-
-#services {
-  height: auto;
-  padding-bottom: 30px;
-  background-color: #f5f6f7;
-}
-
-#services h1 {
-  color: #354575;
-  font-size: 3rem;
-  padding: 25px 0;
-  font-weight: bolder;
-}
-
-#services p {
-  width: 320px;
-  font-size: 1.5rem;
-}
-
-#services h3 {
-  font-size: 2rem;
-  color: #F79C71;
-  margin-top: 40px;
-}
-
-#services ul {
-  text-align: left;
-  width: 80vw;
-  list-style: none;
-  padding-right: 20px;
-  margin: 0 auto;
-  display: block;
-  font-size: 1.5rem;
-}
-
-#services ul li {
-  font-size: 1.5rem;
-  position: relative;
-  left: 12px;
-}
-
-#services ul li::before {
-  position: absolute;
-  content: '\2022';
-  color: #F79C71;
-  padding-left: -12px;
-  font-size: 5rem;
-  line-height: .75;
-  transition: .5s;
-  display: block;
-  left: -2rem;
-  top: -1.2rem;
-}
-
-#services p {
-  padding: 15px;
-}
-
-/* ==========================================================================
 	   8. CLIENTS - Alle elementen die bij de CLIENTS section horen.
 ========================================================================== */
 
@@ -334,7 +77,7 @@ section {
 }
 
 #clients h1 {
-  color: #354575;
+  color: $color-blue;
   font-size: 3rem;
   padding: 25px 0;
 }
@@ -381,12 +124,12 @@ section {
 #blog {
   height: auto;
   margin-bottom: -30px;
-  background-color: #f5f6f7;
+  background-color: $color-grey;
   padding-bottom: 70px;
 }
 
 #blog h1 {
-  background-color: #354575;
+  background-color: $color-blue;
   color: #fff;
   font-size: 3rem;
   padding: 15px 0;
@@ -403,7 +146,7 @@ section {
 }
 
 #blog .flex-container {
-  background-color: #f5f6f7;
+  background-color: $color-grey;
   margin-top: -47px;
   padding: 60px 20px 20px 20px;
 }
@@ -414,7 +157,7 @@ section {
   padding-bottom: 10px;
   margin: 0 15px;
   overflow-y: hidden;
-  color: #f5f6f7;
+  color: $color-grey;
   padding: 20px;
 }
 
@@ -435,7 +178,7 @@ section {
 }
 
 #blog ul li:hover {
-  color: #F79C71;
+  color: $color-orange;
 }
 
 #blog .flex-container .card p {
@@ -452,7 +195,7 @@ section {
 #blog .button {
   text-align: center;
   padding: 5px;
-  background-color: #F79C71;
+  background-color: $color-orange;
   width: 120px;
   display: block;
   margin: 20px 40px;
@@ -463,7 +206,7 @@ section {
 }
 
 #blog .button:hover {
-  background-color: #F79C71;
+  background-color: $color-orange;
   color: #FFF;
   -webkit-box-shadow: 10px 10px 25px -5px rgba(0, 0, 0, 0.41);
   -moz-box-shadow: 10px 10px 25px -5px rgba(0, 0, 0, 0.41);
@@ -475,7 +218,7 @@ section {
 ========================================================================== */
 
 #contact {
-  background-color: #354575;
+  background-color: $color-blue;
   height: auto;
   color: #fff;
   clear: both;
@@ -535,7 +278,7 @@ section {
 }
 
 #contact a:hover {
-  background-color: #F79C71;
+  background-color: $color-orange;
   color: #fff;
 }
 
@@ -581,7 +324,7 @@ section {
 }
 
 footer {
-  background-color: #354575;
+  background-color: $color-blue;
   color: white;
   height: auto;
   position: relative;
@@ -608,7 +351,7 @@ footer a {
 }
 
 footer p span:hover {
-  color: #F79C71;
+  color: $color-orange;
   text-decoration: none;
 }
 
@@ -623,7 +366,7 @@ footer p span {
 }
 
 .fa.fa-heart {
-  color: #F79C71;
+  color: $color-orange;
 }
 
 /* ==========================================================================
@@ -650,10 +393,10 @@ textarea {
   width: 80%;
   display: block;
   margin: 20px auto;
-  border-top: 1px solid #354575;
-  border-left: 1px solid #354575;
-  border-right: 1px solid #354575;
-  border-bottom: 1px solid #354575;
+  border-top: 1px solid $color-blue;
+  border-left: 1px solid $color-blue;
+  border-right: 1px solid $color-blue;
+  border-bottom: 1px solid $color-blue;
   border-radius: 8px;
 }
 
@@ -670,13 +413,13 @@ input[type=url]:focus,
 input[type=password]:focus,
 textarea:focus {
   outline: 0;
-  border-color: #F79C71;
+  border-color: $color-orange;
 }
 
 input[type=submit] {
   text-align: center;
   padding: 5px;
-  background-color: #F79C71;
+  background-color: $color-orange;
   width: 80px;
   display: block;
   margin: 5% 10%;
@@ -700,7 +443,7 @@ input[type=submit] {
 #article h2 {
   text-align: left;
   padding: 15px 0 5px 0;
-  color: #F79C71;
+  color: $color-orange;
   width: 90%;
   display: block;
   margin: 0 auto;
@@ -727,7 +470,7 @@ input[type=submit] {
 }
 
 #article ul li a:hover {
-  color: #F79C71;
+  color: $color-orange;
   text-decoration: none;
 }
 
@@ -774,7 +517,7 @@ input[type=submit] {
 }
 
 #aside ul li a:hover {
-  color: #F79C71;
+  color: $color-orange;
   text-decoration: none;
 }
 
@@ -836,7 +579,7 @@ input::-moz-focus-inner {
 #aside [type=submit] {
   text-align: center;
   padding: 5px;
-  background-color: #F79C71;
+  background-color: $color-orange;
   width: 80px;
   display: block;
   margin: 12% 5%;
@@ -862,7 +605,7 @@ input::-moz-focus-inner {
 
 .accordion dt a::before {
   content: "•";
-  color: #F79C71;
+  color: $color-orange;
   font-size: 130%;
   padding-right: 5px;
   line-height: 0.7;
@@ -874,7 +617,7 @@ input::-moz-focus-inner {
 
 .accordion dd a::before {
   content: "•";
-  color: #F79C71;
+  color: $color-orange;
   font-size: 130%;
   padding-right: 5px;
   line-height: 0.7;
@@ -928,7 +671,7 @@ input::-moz-focus-inner {
 }
 
 #blogOverzicht .flex-container {
-  background-color: #f5f6f7;
+  background-color: $color-grey;
   padding: 60px 20px 20px 20px;
 }
 
@@ -954,7 +697,7 @@ input::-moz-focus-inner {
 }
 
 #blogOverzicht .flex-container .card p span:hover {
-  color: #F79C71;
+  color: $color-orange;
 }
 
 #blogOverzicht .flex-container .card a:hover {
@@ -978,7 +721,7 @@ input::-moz-focus-inner {
 }
 
 #blogOverzicht ul li:hover {
-  color: #F79C71;
+  color: $color-orange;
 }
 
 #blogOverzicht .flex-container .card p:nth-child(2) {
@@ -990,16 +733,16 @@ input::-moz-focus-inner {
 #blogOverzicht .flex-container .card .button {
   text-align: center;
   padding: 5px;
-  border: 2px solid #F79C71;
+  border: 2px solid $color-orange;
   width: 33%;
   display: block;
   margin: 10px auto;
   font-size: 1.2rem;
-  color: #F79C71;
+  color: $color-orange;
 }
 
 #blogOverzicht .flex-container .card .button:hover {
-  background-color: #F79C71;
+  background-color: $color-orange;
   color: #FFF;
 }
 
@@ -1017,587 +760,6 @@ input::-moz-focus-inner {
 }
 
 #blogarchief h3 a:hover {
-  color: #F79C71;
+  color: $color-orange;
   text-decoration: none;
-}
-
-@media only screen and (min-width: 640px) {
-
-  /* ==========================================================================
-			4. NAVIGATIE - Alle elementen die bij de navigatie horen.
-========================================================================== */
-
-  .nav-collapse ul {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: block;
-    list-style: none;
-    margin: 15px;
-    text-align: center;
-  }
-
-  .nav-collapse ul li {
-    display: inline-block;
-    float: none;
-  }
-
-  .js .nav-collapse {
-    position: relative;
-  }
-  .js .nav-collapse.closed {
-    max-height: none;
-  }
-  .nav-toggle {
-    display: none;
-  }
-
-  .logo {
-    width: 150px;
-    margin: 15px auto 10px auto;
-    display: block;
-  }
-
-  .nav-collapse a:active,
-  .nav-collapse .active a {
-    border-bottom: 3px solid #F79C71;
-    font-size: 1.5rem;
-  }
-
-  .nav-collapse a:hover {
-    border-bottom: 3px solid #F79C71;
-  }
-
-  .nav-collapse a {
-    padding: 1.2rem 1.5em;
-    text-align: center;
-    border-top: 0;
-    margin: 0;
-    width: 100%;
-    font-size: 1.5rem;
-    color: #354575;
-  }
-
-  #backHomepage {
-    display: none;
-  }
-
-  .heroimage {
-    background-image: url("/images/heroimage.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 0;
-    padding: 0;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-size: contain;
-    height: 300px;
-    margin-top: 100px;
-    background-color: #BAD7E6;
-  }
-
-  /* ==========================================================================
-	   6. ABOUT - Alle elementen die bij de ABOUT section horen.
-========================================================================== */
-
-  #about p {
-    margin: 25px auto;
-    width: 50%;
-  }
-
-  #about {
-    margin-top: 0px;
-    margin-left: 30px;
-    margin-left: 0;
-  }
-
-  /* Keywords */
-
-  #about .flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  #about .flex-container div {
-    width: 200px;
-    display: block;
-    margin: 20px;
-  }
-
-  #about .flex-container div div {
-    width: auto;
-    display: block;
-    margin: 20px;
-  }
-
-  #about .flex-container div h3 {
-    width: auto;
-    display: block;
-    margin: 20px;
-    font-size: 1.5rem;
-  }
-
-  /* ==========================================================================
-        6. ABOUT - Alle elementen die bij de ABOUT section horen.
-  ========================================================================== */
-
-  #services ul {
-    text-align: left;
-    width: 380px;
-    list-style: none;
-    padding-right: 20px;
-    margin: 0 auto;
-    display: block;
-    font-size: 1.5rem;
-  }
-
-  #services h3 {
-    font-size: 2rem;
-    color: #F79C71;
-    margin-top: 0px;
-  }
-
-  /* ==========================================================================
-          8. CLIENTS - Alle elementen die bij de CLIENTS section hoort.
-  ========================================================================== */
-
-  #clients img {
-    padding: 30px 0;
-    width: 400px;
-    display: block;
-  }
-
-  /* ==========================================================================
-         9. BLOG - Alle elementen die bij de BLOG section horen.
-  ========================================================================== */
-
-  #blog .flex-container .card {
-    width: 60vw;
-    height: auto;
-    overflow-x: hidden;
-    padding-bottom: 10px;
-  }
-
-  #blog .button {
-    margin-right: 10%
-
-  }
-
-  /*
-  ==========================================================================
-        10. CONTACT - Alle elementen die bij de CONTACT section horen.
-  ========================================================================== */
-
-  #contact .flex-container div {
-    margin: 20px;
-    width: 320px;
-  }
-
-  #contact .flex-container img {
-    width: 300px;
-    display: block;
-    border-radius: 50%;
-  }
-
-  #contact .flex-container div:nth-child(2) {
-    margin-top: 50px;
-  }
-
-  #contact .flex-container div:nth-child(4) {
-    margin-top: 50px;
-  }
-
-  /* footer logo */
-
-  footer img {
-    top: 0;
-    left: 0;
-    width: 40px;
-    margin: 20px;
-    position: absolute;
-
-  }
-
-  /* Blog pagina */
-
-  #blogPagina h1 {
-    margin: 120px 0 20px 0;
-    font-size: 3rem;
-  }
-
-  #blogPagina h2 {
-    width: 100vw;
-    margin-top: 50px;
-    font-size: 1.5rem;
-  }
-
-  #article {
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    height: auto;
-  }
-
-  #article img {
-    width: 80%;
-  }
-
-  #article h2 {
-    text-align: left;
-    padding: 15px 0 5px 0;
-    color: #F79C71;
-    width: 90%;
-    display: block;
-    margin: 0 auto;
-  }
-
-  #article p {
-    width: 90vw;
-    display: block;
-    padding: 15px;
-    text-align: left;
-    font-size: 1.5rem;
-    margin: 0 auto;
-  }
-
-  #article ul li {
-    display: inline-block;
-    padding-left: 5px;
-    margin-top: 10px;
-    text-align: left;
-    font-size: 1.2rem;
-  }
-
-  #article ul li a {
-    color: grey;
-  }
-
-  #article ul li a:hover {
-    color: #F79C71;
-    text-decoration: none;
-  }
-
-  #article ul:last-child {
-    border-bottom: 0px solid black;
-    border-top: 0px solid black;
-    width: 90%;
-    display: block;
-    padding: 5px 0;
-    margin: 0 auto;
-  }
-  #article ul:nth-child(1) {
-    border-bottom: 1px solid black;
-    width: 90%;
-    display: block;
-    padding: 5px 0;
-    margin: 0 auto;
-  }
-
-  #aside p {
-    width: 60vw;
-    display: block;
-    margin: 0 auto;
-    padding: 15px;
-    text-align: left;
-    font-size: 1.5rem;
-  }
-
-}
-
-/* Desktop */
-
-@media only screen and (min-width: 1100px) {
-
-  /* ==========================================================================
-			4. NAVIGATIE - Alle elementen die bij de navigatie horen.
-========================================================================== */
-
-  .nav-collapse ul {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: block;
-    list-style: none;
-    margin: 27px 15px 15px 15px;
-    text-align: left;
-  }
-
-  .js .nav-collapse {
-    position: relative;
-  }
-  .js .nav-collapse.closed {
-    max-height: none;
-  }
-  .nav-toggle {
-    display: none;
-  }
-
-  .logo {
-    width: 150px;
-    margin: 15px;
-    float: left;
-  }
-
-  .nav-collapse a {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    text-decoration: none;
-    background: #fff;
-    padding: 1.2rem 1.5em;
-    color: black;
-    width: 100%;
-    font-size: 1.5rem;
-    border-top: 0;
-    margin: 0;
-    color: #354575;
-  }
-
-  .nav-collapse a:active,
-  .nav-collapse .active a {
-    border-bottom: 3px solid #F79C71;
-    font-size: 1.5rem;
-  }
-
-  .nav-collapse a:hover {
-    border-bottom: 3px solid #F79C71;
-  }
-
-  #home {
-    float: none;
-  }
-
-  header {
-    margin: 0;
-  }
-
-  .heroimage {
-    background-image: url("/images/heroimage.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 0;
-    padding: 0;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-size: contain;
-    height: 500px;
-    background-color: #BAD7E6;
-  }
-
-  /* ==========================================================================
-       6. ABOUT - Alle elementen die bij de ABOUT section horen.
-  ========================================================================== */
-
-  #about .flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  #about .flex-container div {
-    width: 170px;
-    display: block;
-    margin: 20px;
-  }
-
-  #about .flex-container div div {
-    width: auto;
-    display: block;
-    margin: 20px;
-  }
-
-  #about .flex-container img {
-    display: block;
-    width: auto;
-  }
-
-  #about .flex-container div div h3 {
-    display: block;
-    margin: 10px;
-    width: auto;
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
-  /* ==========================================================================
-          8. CLIENTS - Alle elementen die bij de CLIENTS section hoort.
-  ========================================================================== */
-
-  #client h1 {
-    font-size: 2.3rem;
-  }
-
-  #clients h2 {
-    margin: 20px 0;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: left;
-  }
-
-  #clients p {
-    padding-bottom: 30px;
-    width: 500px;
-    margin: 0 auto;
-    text-align: left;
-  }
-
-  #clients img {
-    padding: 30px;
-    width: 350px;
-    height: auto;
-  }
-
-  .line {
-    border-bottom: 1px solid black;
-    width: 400px;
-    display: block;
-    margin: 0 auto;
-    padding: 20px 0;
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-
-  /* ==========================================================================
-         9. BLOG - Alle elementen die bij de BLOG section horen.
-  ========================================================================== */
-
-  #blog .flex-container .card {
-    width: 25vw;
-    height: auto;
-    overflow-x: hidden;
-    padding-bottom: 10px;
-  }
-
-  /*
-  ==========================================================================
-      10. CONTACT - Alle elementen die bij de CONTACT section horen.
-  ========================================================================== */
-
-  #contact {
-    position: relative;
-  }
-
-  #contact .flex-container div img {
-    display: block;
-    border-radius: 50%;
-    margin-left: 60px;
-    width: 100%;
-    position: absolute;
-  }
-
-  #contact .flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-  #contact .flex-container div {
-    margin: 20px;
-    width: 20vw;
-    position: relative;
-    margin-left: -40px;
-  }
-
-  #contact .flex-container div:nth-child(2) {
-    margin: 20px;
-    width: 12vw;
-    margin-left: -70px;
-  }
-
-  #contact .flex-container div:nth-child(4) {
-    margin: 20px;
-    width: 10vw;
-    margin-left: -90px;
-  }
-
-  #contact ul {
-    margin-top: 40%;
-  }
-
-  #contact .flex-container #dries {
-    margin-left: 150px;
-  }
-
-  #contact .flex-container #elena {
-    margin-left: 100px;
-  }
-
-  #line {
-    display: block;
-    margin: 30px 0;
-    width: 1px;
-    position: absolute;
-    height: 70%;
-    background: white;
-    top: 15%;
-    left: 50%;
-  }
-
-  /* Blogpagina */
-
-  #blogPagina h1 {
-    margin: 120px 0 20px 0;
-    font-size: 4rem;
-  }
-
-  #article {
-    text-align: center;
-    padding: 0;
-    margin: 0 50px 0 30px;
-    height: auto;
-    width: 70vw;
-    float: left;
-  }
-
-  #article ul:last-child {
-    border-bottom: 0px solid black;
-    border-top: 0px solid black;
-    width: 30%;
-    display: block;
-    padding: 5px 0;
-    margin: 0 auto;
-  }
-
-  #article ul:nth-child(1) {
-    border-bottom: 1px solid black;
-    width: 30%;
-    display: block;
-    padding: 5px 0;
-    margin: 0 auto;
-  }
-
-  #article p {
-    width: 100%;
-    display: block;
-    margin: 0 auto;
-    padding: 15px 0;
-    text-align: left;
-  }
-
-  #article h2 {
-    text-align: center;
-    padding: 15px 0 5px 0;
-    color: #F79C71;
-    width: 100%;
-    display: block;
-    margin: 0 auto;
-  }
-
-  #aside {
-    width: 20vw;
-    float: left;
-    margin-top: 15%;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  #aside p {
-    width: 100%;
-  }
-
 }

@@ -1,0 +1,53 @@
+@import "variables";
+
+#services {
+  height: auto;
+  padding-bottom: 30px;
+  background-color: $color-grey;
+
+  h1 {
+    color: $color-blue;
+    font-size: 3rem;
+    padding: 25px 0;
+    font-weight: bolder;
+  }
+
+  p {
+    width: 320px;
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  h3 {
+    color: $color-orange;
+    margin-top: 40px;
+  }
+
+  ul {
+    text-align: left;
+    width: 80vw;
+    list-style: none;
+    padding-right: 20px;
+    margin: 0 auto;
+    display: block;
+
+    li {
+      font-size: 1rem;
+      position: relative;
+      left: 12px;
+
+      &::before {
+        position: absolute;
+        content: '\2022';
+        color: $color-orange;
+        padding-left: -12px;
+        font-size: 5rem;
+        line-height: .75;
+        transition: .5s;
+        display: block;
+        left: -2rem;
+        top: -1.5rem;
+      }
+    }
+  }
+}

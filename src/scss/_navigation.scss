@@ -1,0 +1,59 @@
+@import "variables";
+
+.nav-collapse ul {
+  display: none;
+}
+
+.js .nav-collapse {
+  clip: rect(0 0 0 0);
+  max-height: 0;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  zoom: 1;
+}
+
+.disable-pointer-events {
+  pointer-events: none !important;
+}
+
+header {
+  background: #fff;
+  position: fixed;
+  width: 100%;
+  height: auto;
+  left: 0;
+  top: 0;
+  box-shadow: 0 2px 24px -2px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.logo {
+  width: 150px;
+  margin: 15px auto;
+  display: block;
+}
+
+.nav-collapse a {
+  font-size: 1.2rem;
+
+  &:active {
+    border-bottom: 4px solid $color-orange;
+  }
+
+  &:hover {
+    border-bottom: 3px solid $color-orange;
+  }
+}
+
+#backHomepage {
+  background-color: $color-blue;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #fff;
+  padding: 10px 0;
+
+  a {
+    color: #fff;
+  }
+}
