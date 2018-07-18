@@ -18,6 +18,11 @@
     background: #BAD7E6 url("/images/heroimage.jpg") no-repeat center;
     background-size: contain;
   }
+
+  @include desktop-screens {
+    height: 500px;
+    margin: 0;
+  }
 }
 
 section {

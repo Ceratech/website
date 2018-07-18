@@ -20,6 +20,10 @@
         display: inline-block;
       }
     }
+
+    @include desktop-screens {
+      text-align: left;
+    }
   }
 }
 
@@ -33,6 +37,10 @@
     margin: 0;
     width: 100%;
     color: $color-blue;
+  }
+
+  @include desktop-screens {
+    padding: 1.0rem 1.5em;
   }
 
   &:active {
@@ -63,6 +71,11 @@ header {
   width: 150px;
   margin: 15px auto;
   display: block;
+
+  @include desktop-screens {
+    margin: 15px;
+    float: left;
+  }
 }
 
 #backHomepage {

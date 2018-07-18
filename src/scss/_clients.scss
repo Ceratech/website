@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixins";
 
 #clients {
   height: auto;
@@ -39,5 +40,23 @@
     width: 300px;
     display: block;
     margin: 10px auto;
+  }
+
+  @include desktop-screens {
+    h2 {
+      margin: 20px 0;
+      text-align: left;
+    }
+
+    p {
+      width: 500px;
+      text-align: left;
+      margin-left: 0;
+    }
+
+    img {
+      padding: 30px;
+      width: 350px;
+    }
   }
 }

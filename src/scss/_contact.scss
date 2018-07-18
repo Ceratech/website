@@ -73,4 +73,53 @@
     list-style: none;
     color: white;
   }
+
+  @include desktop-screens {
+    position: relative;
+
+    .flex-container {
+      justify-content: space-around;
+
+      div {
+        width: 20vw;
+        position: relative;
+        margin: 20px 20px 20px -40px;
+
+        img {
+          margin-left: 60px;
+          width: 100%;
+          position: absolute;
+        }
+      }
+
+      div:nth-child(2) {
+        width: 16vw;
+        margin: 20px 20px 20px -70px;
+      }
+
+      div:nth-child(4) {
+        width: 14vw;
+        margin: 20px 20px 20px -90px;
+      }
+
+      #dries {
+        margin-left: 150px;
+      }
+
+      #elena {
+        margin-left: 100px;
+      }
+    }
+
+    #line {
+      display: block;
+      margin: 30px 0;
+      width: 1px;
+      position: absolute;
+      height: 70%;
+      background: white;
+      top: 15%;
+      left: 50%;
+    }
+  }
 }

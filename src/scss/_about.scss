@@ -71,4 +71,16 @@
       }
     }
   }
+
+  @include desktop-screens {
+    .flex-container {
+      div {
+        width: 170px;
+
+        img {
+          width: auto;
+        }
+      }
+    }
+  }
 }
