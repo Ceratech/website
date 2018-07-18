@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixins";
 
 #about {
   height: auto;
@@ -44,6 +45,30 @@
 
     img {
       display: block;
+    }
+  }
+
+  @include tablet-screens {
+    margin-top: 0;
+    margin-left: 0;
+
+    h1 {
+      margin-top: 0;
+    }
+
+    p {
+      margin: 25px auto;
+      width: 50%;
+    }
+
+    .flex-container div {
+      width: 200px;
+      margin: 20px;
+
+      div, h3 {
+        margin: 20px;
+        width: auto;
+      }
     }
   }
 }

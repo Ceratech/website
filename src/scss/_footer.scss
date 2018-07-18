@@ -60,5 +60,11 @@ footer {
   .fa.fa-heart {
     color: $color-orange;
   }
+
+  @include tablet-screens {
+    img {
+      width: 40px;
+    }
+  }
 }
 

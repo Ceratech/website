@@ -1,16 +1,47 @@
 @import "variables";
+@import "mixins";
 
-.nav-collapse ul {
-  display: none;
+.nav-collapse {
+  @include tablet-screens {
+    position: relative;
+  }
+
+  ul {
+    display: none;
+
+    @include tablet-screens {
+      width: 100%;
+      display: block;
+      list-style: none;
+      margin: 15px;
+      text-align: center;
+
+      li {
+        display: inline-block;
+      }
+    }
+  }
 }
 
-.js .nav-collapse {
-  clip: rect(0 0 0 0);
-  max-height: 0;
-  position: absolute;
-  display: block;
-  overflow: hidden;
-  zoom: 1;
+.nav-collapse a {
+  font-size: 1.2rem;
+
+  @include tablet-screens {
+    padding: 0.9rem 1.5em;
+    text-align: center;
+    border-top: 0;
+    margin: 0;
+    width: 100%;
+    color: $color-blue;
+  }
+
+  &:active {
+    border-bottom: 3px solid $color-orange;
+  }
+
+  &:hover {
+    border-bottom: 3px solid $color-orange;
+  }
 }
 
 .disable-pointer-events {
@@ -34,23 +65,10 @@ header {
   display: block;
 }
 
-.nav-collapse a {
-  font-size: 1.2rem;
-
-  &:active {
-    border-bottom: 4px solid $color-orange;
-  }
-
-  &:hover {
-    border-bottom: 3px solid $color-orange;
-  }
-}
-
 #backHomepage {
-  background-color: $color-blue;
+  @include blue-background;
   font-size: 1.5rem;
   text-align: center;
-  color: #fff;
   padding: 10px 0;
 
   a {

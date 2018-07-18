@@ -4,3 +4,15 @@
   color: #FFFFFF;
   background-color: $color-blue;
 }
+
+@mixin tablet-screens {
+  @media only screen and (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin desktop-screens {
+  @media only screen and (min-width: 1100px) {
+    @content;
+  }
+}
