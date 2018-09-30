@@ -36,7 +36,7 @@
             padding: 1.0rem 1.5em;
           }
 
-          &:active {
+          &:active, &.active {
             border-bottom: 3px solid $color-orange;
           }
 
