@@ -10,7 +10,7 @@
     "watch": "run-p watch:hugo watch:webpack",
     "watch:hugo": "hugo serve --disableFastRender",
     "watch:webpack": "webpack --watch",
-    "prod": "webpack -p --config webpack.prod.js && hugo"
+    "prod": "webpack -p --config webpack.config.js && hugo"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
